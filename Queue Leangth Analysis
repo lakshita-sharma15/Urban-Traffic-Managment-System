@@ -1,0 +1,30 @@
+import matplotlib.pyplot as plt
+
+# Time points
+time_points = ["9:00 AM", "9:10 AM", "9:20 AM", "9:30 AM", "9:40 AM", "9:50 AM"]
+
+# Data for each method
+fixed_time = [30, 35, 40, 45, 50, 55]
+adaptive_control = [20, 25, 28, 32, 35, 39]
+madrl_v2i = [10, 12, 15, 17, 19, 21]
+
+plt.figure(figsize=(10, 6))
+
+# Plot lines
+plt.plot(time_points, fixed_time, marker='o', label="Fixed-Time Control")
+plt.plot(time_points, adaptive_control, marker='o', label="Adaptive Control")
+plt.plot(time_points, madrl_v2i, marker='o', label="MADRL + V2I")
+
+# Labels & Title
+plt.title("Queue Length Analysis (Simulation Run: 9:00 AM - 9:50 AM)", fontsize=14)
+plt.xlabel("Time of Day (October 2025)")
+plt.ylabel("Queue Length (Vehicles)")
+
+# Legend
+plt.legend()
+
+# Grid for better readability
+plt.grid(True, linestyle="--", alpha=0.5)
+
+plt.tight_layout()
+plt.show()
